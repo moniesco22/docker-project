@@ -1,0 +1,14 @@
+# Use a lightweight base image
+FROM alpine:latest
+
+# Setting a working directory
+WORKDIR /app
+
+# Copying local files to the container
+COPY . /app
+
+# Installing the basic utilities
+RUN apk add --no-cache bash
+
+# Default command (simple so it works for me)
+CMD ["echo", "Hello, Docker!"]
